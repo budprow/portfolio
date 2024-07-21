@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Motivational Poster</title>
+</head>
+
+<body>
+        
+<div class="poster" onclick="location.reload()">
+    <div class="photo"></div>
+    <div class="main-word-container" onclick="location.reload()">
+      <span class="main-word"></span>
+      <p class="refresh-main-word">Click to Refresh</p> 
+    </div>
+    <div class="quote-container"></div>
+</div>
+
+</body>
+<script>
+
+async function fetchData() {
+  const [photoResponse, quoteResponse, wordResponse] = await Promise.all([
+    fetch("https://picsum.photos/1200/900/?grayscale"),
+    fetch("https://api.quotable.io/random"),
+    fetch("https://random-word-api.herokuapp.com/word"),
+  ]);
+
+  try {
+    if (!photoResponse.ok) throw new Error("Error fetching photo");
+    if (!quoteResponse.ok) throw new Error("Error fetching quote");
+    if (!wordResponse.ok) throw new Error("Error fetching word");
+
+    const photo = document.querySelector(".photo");
+    const quoteContainer = document.querySelector(".quote-container");
+    const mainWord = document.querySelector(".main-word");
+
+    photo.style.backgroundImage = `url(${photoResponse.url})`;
+    photo.style.backgroundSize = "cover";
+
+    const quoteData = await quoteResponse.json();
+    quoteContainer.innerHTML = `"${quoteData.content}" <br> - ${quoteData.author}`;
+
+    const wordData = await wordResponse.json();
+    mainWord.textContent = wordData[0];
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+fetchData();
+
+</script>
+</html>
