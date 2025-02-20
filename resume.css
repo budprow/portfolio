@@ -1,1 +1,20 @@
+body {
+    height: auto;
+    max-width: 1000px
+}
 
+.name {
+    display: flex;
+    justify-content: center;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+}
+
+.company {
+    display: flex;
+    justify-content: space-between;
+
+}
