@@ -1,20 +1,55 @@
 body {
     height: auto;
-    max-width: 1000px
+    width: auto;
+    display: flexbox;
+    justify-content: center;
+    font-size: 100%;
 }
 
-.name {
+.section h2 {
+    border-bottom: 1px solid;
+    padding-bottom: 2px;
+}
+
+.name h1 {
     display: flex;
     justify-content: center;
+    padding-top: -4px;
+    margin-bottom: 2px;
 }
 
-.contact {
+.contact p1 {
     display: flex;
     justify-content: center;
+    margin-bottom: -6px;
 }
 
-.company {
+.company h3 {
     display: flex;
     justify-content: space-between;
+    margin: 4px 4px;
+}
 
+.job p1 {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+}
+
+.location h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cert p1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills p1 {
+    display: flex;
+}
+
+.cert li {
+    font-style: italic;
 }
