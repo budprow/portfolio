@@ -1,107 +1,99 @@
-body {
+/* Reset and General Styles */
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, hsla(204, 61%, 56%, 1) 10%,
-    hsla(28, 98%, 41%, 1) 100%);
-  }  
+    box-sizing: border-box;
+}
 
-/* header */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    height: 100%; /* Ensure full height */
+}
 
-header {
-    width: 100vw;
-    background-color: #4B9CD3;
-    color: #fff;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f4;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100%; /* Ensure full height */
     display: flex;
-}
-
-header div {
-    margin: auto auto auto 1rem;
     flex-direction: column;
-    align-content: center;
+    justify-content: center; /* Vertical centering */
+    margin: 0;
 }
 
-header div img {
-    width: 200;
-    height: auto;
-    align-self: flex-end;
+.container {
+    margin: 0 auto; /* Center horizontally */
+    width: 100%; /* Take full width */
 }
 
-/* links div */
+/* Header */
+header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem 0;
+}
 
-.links {
-    width: 100%;
-    padding: 20px;
-    background-color: gray;
+.header-content {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center horizontally */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.faceshot {
+    width: 250px; /* Adjusted size */
+    height: 250px; /* Adjusted size */
+    border-radius: 50%; /* Circular */
+    object-fit: cover;
+    margin-right: 2rem; /* Spacing to the right */
+}
+
+.intro {
+    text-align: left; /* Align text to the left */
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.intro h2 {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/* Navigation */
+.main-nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.main-nav ul {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
+    list-style: none;
+    padding: 0 1rem;
 }
 
-.links button {
-    background-color: wheat;
-    color: #4B9CD3;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3 ease;
+.main-nav li {
+    margin: 0 1.5rem;
 }
 
-.links button:hover {
-    background-color: #3877A9;
-    color: white;
-}
-
-.links a {
+.main-nav a {
+    color: #fff;
     text-decoration: none;
-    color: inherit;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-/* Motivational Poster */
-
-.poster {
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.main-nav a:hover {
+    color: #f0c14b;
 }
-
-.photo {
-    width: 75%;
-    height: 66%;
-    border: 5px groove white;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.main-word-container {
-    width: 75%;               
-    margin: 1rem auto;
-    text-align: center;      
-    position: relative;      
-  }
-  
-  .main-word {
-    color: goldenrod;
-    font-size: 2em;
-    font-family: "Times New Roman", Times, serif;
-    text-transform: uppercase;
-    
-  }
-  
-  .refresh-main-word {
-    color: lightgray;
-    position: absolute;
-    right: 0;             
-  }
-
-.quote-container {
-    color: white;
-    font-size: 1.5em;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    width: 100%;
-}
-
